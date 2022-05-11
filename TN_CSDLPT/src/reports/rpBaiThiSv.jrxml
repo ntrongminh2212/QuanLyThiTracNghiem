@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4363c674-2768-4307-a926-bf6ca698b6ec">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFE4C4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFE2BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" whenResourceMissingType="Key" uuid="1d8b9d08-3c78-48c9-82d5-1a3668db7e83">
+		<parameter name="maBt" class="java.lang.Integer"/>
+		<parameter name="link1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[EXEC $P!{link1}TN_CSDLPT.DBO.SP_BAOCAO_BAITHI $P{maBt}]]>
+		</queryString>
+		<field name="STT" class="java.lang.Long"/>
+		<field name="CAUSO" class="java.lang.Integer"/>
+		<field name="NOIDUNG" class="java.lang.String"/>
+		<field name="CACCHONLUA" class="java.lang.String"/>
+		<field name="DAPAN" class="java.lang.String"/>
+		<field name="DACHON" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="LOP" class="java.lang.String"/>
+	<parameter name="HOTEN" class="java.lang.String"/>
+	<parameter name="MONHOC" class="java.lang.String"/>
+	<parameter name="NGAYTHI" class="java.lang.String"/>
+	<parameter name="DIEM" class="java.lang.Double"/>
+	<parameter name="LAN" class="java.lang.Integer"/>
+	<parameter name="MABT" class="java.lang.Integer"/>
+	<parameter name="LINK1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 1 AS TEMP]]>
+	</queryString>
+	<field name="TEMP" class="java.lang.Integer"/>
+	<group name="STT">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="28c04bf3-d1e3-489c-b72d-bd25056336f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="19" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[BÀI KIỂM TRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="77" height="25" uuid="4295c72c-41fb-43f2-94b1-92026716e4e6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lớp          :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="77" height="25" uuid="b07baf2f-37b6-4c89-8d66-8a398952f796"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Họ tên      :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="85" width="77" height="25" uuid="0cf5d033-c84b-4f0a-94db-1df86d65d72e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Môn học   :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="77" height="25" uuid="8ecf4984-51ff-4f8b-9269-ea79aff36931"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ngày thi   :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="77" y="35" width="274" height="25" uuid="cd507dfe-5cc7-47a1-a092-f8cc5366640c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LOP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="85" width="274" height="25" uuid="5e9aebe5-b424-4e34-a86b-3a06ecc63b7c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MONHOC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="60" width="274" height="25" uuid="14077ee5-3c4e-46e4-8028-7107f66cffe6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{HOTEN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="110" width="274" height="25" uuid="9feaf896-5c4a-424b-9016-e66e7eddfa7f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NGAYTHI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="396" y="110" width="59" height="25" uuid="8ed94880-0c05-42f8-8869-f1864d3e409f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lần thi:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="110" width="29" height="25" uuid="77d46942-c22f-47e6-a62b-50642d2a8a84"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LAN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="368" y="35" width="124" height="25" uuid="bac2575c-8ec6-40f7-a339-ebd75e982f04"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="13" isBold="false" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ĐIỂM:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="60" width="124" height="50" uuid="03872398-073b-4df5-b5e2-7091f5f66ffc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DIEM}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="147" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="555" height="147" uuid="64c38b4f-5a4c-48c7-b6f0-49e982da26ca"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Table Dataset 1" uuid="1a0d1c2f-baec-4ec4-a07e-82cb95abf617">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<datasetParameter name="maBt">
+							<datasetParameterExpression><![CDATA[$P{MABT}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="link1">
+							<datasetParameterExpression><![CDATA[$P{LINK1}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="36" uuid="04dbdf17-4312-4b53-b00c-7a5e1b3bfd19">
+						<jr:columnHeader style="table_CH" height="37" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="36" height="37" uuid="17bc9e14-82d0-4bfe-9d83-dc49049fed6a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[STT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="64" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="35" height="64" uuid="d2731f3a-1de0-4785-86dd-c8ff929deb2e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{STT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="55" uuid="62862cd6-9d3e-41fe-aab8-dcbecd1bb9ea">
+						<jr:columnHeader style="table_CH" height="37" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="55" height="37" uuid="75047b96-02ba-4698-acdc-337e79096710"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[CÂU SỐ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="64" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="55" height="64" uuid="cbcc8475-1364-489d-8999-7a0de06bbde6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{CAUSO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="178" uuid="0195889e-ceab-4239-a31c-4ec8deb02a22">
+						<jr:columnHeader style="table_CH" height="37" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="178" height="37" uuid="f29c1814-4583-4ba4-9d46-ab3dded1c155"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[NỘI DUNG]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="64" rowSpan="1">
+							<textField>
+								<reportElement x="3" y="0" width="175" height="64" uuid="dbf716c3-496b-4814-8bf1-891286746e74"/>
+								<textElement>
+									<font fontName="Times New Roman" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{NOIDUNG}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="152" uuid="84eff6f6-b45e-4136-87d2-2025a784481f">
+						<jr:columnHeader style="table_CH" height="37" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="152" height="37" uuid="75f2c68a-4e76-4d6e-8bf7-ccbaaca34c87"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[CÁC CHỌN LỰA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="64" rowSpan="1">
+							<textField>
+								<reportElement x="3" y="0" width="149" height="64" uuid="9746ce03-e239-46ff-afea-f31abf922174"/>
+								<textElement>
+									<font fontName="Times New Roman" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{CACCHONLUA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="59" uuid="b64315f4-fe66-4f42-b91b-d5322ac46b29">
+						<jr:columnHeader style="table_CH" height="37" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="59" height="37" uuid="2be03f3a-2ee6-4ed5-bba4-7cf8be90b7ef"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ĐÁP ÁN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="64" rowSpan="1">
+							<textField>
+								<reportElement x="1" y="0" width="58" height="64" uuid="7ea3bbef-89e6-4f02-8556-d08c57b0f782"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{DAPAN}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="59" uuid="c453d1b5-7b93-475a-bb8e-5ee48ece3530">
+						<jr:columnHeader style="table_CH" height="37" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="59" height="37" uuid="0bd0cecd-1180-4772-95d4-ec14724a35fb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[ĐÃ CHỌN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="64" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="59" height="64" uuid="afc5041e-e67b-4101-ac9d-6ababb24a2f1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="11" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{DACHON}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

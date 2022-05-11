@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Key" uuid="e8560bf0-ac98-4659-8574-ba6b346753b8">
+	<property name="ireport.zoom" value="1.948717100000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFE4C4">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFE2BF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 2" uuid="4a4d4ef2-0c82-46ad-96d5-45d76e14a635">
+		<parameter name="maLop" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="maMh" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="lan" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<parameter name="link1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[EXEC $P!{link1}SP_BAOCAO_BANGDIEMKT $P{maLop},$P{maMh},$P{lan}]]>
+		</queryString>
+		<field name="MASV" class="java.lang.String"/>
+		<field name="HOTEN" class="java.lang.String"/>
+		<field name="DIEM" class="java.lang.Double"/>
+		<group name="MASV">
+			<groupExpression><![CDATA[$F{MASV}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="MAMH" class="java.lang.String"/>
+	<parameter name="LAN" class="java.lang.Integer"/>
+	<parameter name="MALOP" class="java.lang.String"/>
+	<parameter name="LINK1" class="java.lang.String"/>
+	<parameter name="TENMH" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT 1 AS TEMP]]>
+	</queryString>
+	<field name="TEMP" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="165" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="38" width="89" height="23" uuid="abb269a0-975a-4034-8646-06d23df2e40a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<text><![CDATA[Kỳ thi môn:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="84" width="89" height="23" uuid="087bb34f-1342-4c37-9a42-25a15761867e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<text><![CDATA[Lớp            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="61" width="89" height="23" uuid="e7e67186-c355-44ac-ab75-17abd62a2efd"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<text><![CDATA[Lần thứ      :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="38" width="100" height="23" uuid="58b183fa-6058-4f87-94f0-97b80df10326"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MAMH}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="61" width="100" height="23" uuid="15ed8f3c-fc2a-4085-8b56-58acbe5d3f17"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LAN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="84" width="100" height="23" uuid="2ae1b3e8-e536-4eea-b762-3de90e1b599c"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MALOP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="25" uuid="13a6cd45-f503-412b-ae34-0ae449e08df8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BÁO CÁO BẢNG ĐIỂM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="555" height="36" uuid="63e27942-31a1-48d3-b706-b957ad50d5ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="38" width="15" height="23" uuid="703e2422-68c2-4bbf-88b3-90768c5b9209"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<text><![CDATA[ -]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="204" y="38" width="285" height="23" uuid="e447597f-fff5-4e9d-a421-e83bb9ad4af3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="17"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TENMH}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="20" y="0" width="521" height="98" uuid="b8c1a3f5-11d9-474c-a76f-a212c62f7251"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="New Dataset 2" uuid="a6dc491a-4df4-4a76-b747-0b41951f2d52">
+						<datasetParameter name="maLop">
+							<datasetParameterExpression><![CDATA[$P{MALOP}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="maMh">
+							<datasetParameterExpression><![CDATA[$P{MAMH}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="lan">
+							<datasetParameterExpression><![CDATA[$P{LAN}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="link1">
+							<datasetParameterExpression><![CDATA[$P{LINK1}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="109" uuid="71f3b13d-79ac-4e47-9054-0ad59483be84">
+						<jr:columnHeader style="table_CH" height="36" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="107" height="36" uuid="8e6b333a-c60d-4eee-ae05-0a4c7914846d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Mã sinh viên]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="39" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="107" height="39" uuid="ddb053a3-6d5d-484c-ae94-3e7d2ecca750"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{MASV}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="257" uuid="4fbd3e73-5886-4f1a-98b6-82d4a598e140">
+						<jr:columnHeader style="table_CH" height="36" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="257" height="36" uuid="558bfd0f-74c5-4706-b590-29e715f4e3a1"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Họ tên]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="39" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="247" height="39" uuid="6b82d1f3-80ce-4204-994e-18de9ddb0ce7"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{HOTEN}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="96" uuid="95ba4e17-82e8-4ea0-9229-d2f959c8ea46">
+						<jr:columnHeader style="table_CH" height="36" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="95" height="36" uuid="39064201-8a22-4462-897f-6e22776d61f3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Điểm thi]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="39" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="95" height="39" uuid="09e97cf8-208c-4b5c-8789-65d16da018dc"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="16"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{DIEM}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
